@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SubscribeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,6 @@ Route::get('/services', function () {
 Route::get('/contacts', function () {
     return view('contacts');
 });
+Route::post('/subscribe', [SubscribeController::class, 'save_subscription']);
+// Route::get('/user', [UserController::class, 'index']);
+Route::post('/appointment', [SubscribeController::class, 'save_appointment']);
