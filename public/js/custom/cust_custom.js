@@ -8,12 +8,13 @@ $(document)
                 toastr.success(resp);
             },
             function (error) {
-                console.log(error.responseJSON.message);
+                
+                $('#subscribe_form :input[name="email"]').addClass('error-border-red');
                 toastr.error(error.responseJSON.message);
             }
         );
     });
-$(document)
+$(document)     
     .off("click", "#appointment_btn")
     .on("click", "#appointment_btn", function (e) {
         e.preventDefault();
@@ -24,11 +25,15 @@ $(document)
                 toastr.success(resp);
             },
             function ({ responseJSON, status }) {
-                console.log(responseJSON.errors);
+                $err_data = responseJSON.errors;
                 if (status === 422) {
-                    
+                    $.each($err_data,(k , v)=>{
+
+                        $("#appointment_form").find(`[name="${k}"]`).addClass('error_form');
+
+                    })
                 }
-                toastr.error();
+                toastr.error('Enter the correct data.');
             }
         );
     });

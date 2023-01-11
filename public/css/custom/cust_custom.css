@@ -1,3 +1,6 @@
 .error_form {
 border-bottom: 2px solid red !important;
 }
+.error-border-red{
+    border: 2px solid red !important;
+}
