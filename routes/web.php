@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SubscribeController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,10 @@ Route::get('/single-product', function () {
 Route::post('/subscribe', [SubscribeController::class, 'save_subscription']);
 // Route::get('/user', [UserController::class, 'index']);
 Route::post('/appointment', [SubscribeController::class, 'save_appointment']);
+
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [AdminController::class, 'login']);
+    Route::get('/signup', [AdminController::class, 'signup']);
+    Route::get('/dashboard', [AdminController::class, 'dashboard']);
+    Route::get('/profile', [AdminController::class, 'profile']);
+});

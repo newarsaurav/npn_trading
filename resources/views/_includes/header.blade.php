@@ -72,8 +72,7 @@
                     <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="/product" class="nav-link">Product</a></li>
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="/admin/login" class="nav-link">Admin</a></li>
                     <li class="nav-item"><a href="/contacts" class="nav-link">Contact</a></li>
                 </ul>
             </div>
