@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Enquiry;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -23,4 +25,15 @@ class AdminController extends Controller
     {
         return view("admin.dashboard.profile");
     }
+    public function subscription(Request $request)
+    {
+        $subscription = Subscription::where('is_deleted',0)->latest()->get();
+        return view("admin.dashboard.subscription",compact('subscription'));
+    }
+    public function enquiry(Request $request)
+    {
+        $enqs = Enquiry::where('is_deleted',0)->latest()->get();
+        return view("admin.dashboard.enquiry",compact('enqs'));
+    }
+
 }

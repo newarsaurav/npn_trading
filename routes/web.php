@@ -37,9 +37,15 @@ Route::post('/subscribe', [SubscribeController::class, 'save_subscription']);
 // Route::get('/user', [UserController::class, 'index']);
 Route::post('/appointment', [SubscribeController::class, 'save_appointment']);
 
+Route::post('/enquiry',[SubscribeController::class,'save_enquiry']);
+
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminController::class, 'login']);
     Route::get('/signup', [AdminController::class, 'signup']);
     Route::get('/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/profile', [AdminController::class, 'profile']);
+    Route::get('/subscription', [AdminController::class, 'subscription']);
+    Route::get('/get_subscription', [AdminController::class, 'getSubscription']);
+    Route::get('/enquiry', [AdminController::class, 'enquiry']);
+    Route::get('/get_enquiry', [AdminController::class, 'getEnquiry']);
 });

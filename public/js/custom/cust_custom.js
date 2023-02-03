@@ -14,6 +14,22 @@ $(document)
             }
         );
     });
+$(document)
+    .off("click", "#enquiry_btn")
+    .on("click", "#enquiry_btn", function (e) {
+        e.preventDefault();
+        let subscribe_data = $("#enquiry_form :input").serializeArray();
+        $.post("/enquiry", subscribe_data).then(
+            function (resp) {
+                toastr.success(resp);
+            },
+            function (error) {
+                
+                $('#subscribe_form :input[name="email"]').addClass('error-border-red');
+                toastr.error(error.responseJSON.message);
+            }
+        );
+    });
 $(document)     
     .off("click", "#appointment_btn")
     .on("click", "#appointment_btn", function (e) {

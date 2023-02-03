@@ -66,12 +66,13 @@
 					      		<div id="form-message-success" class="mb-4">
 					            Your message was sent, thank you!
 					      		</div>
-										<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+										<form id="enquiry_form"  	class="contactForm">
+											@csrf
 											<div class="row">
 												<div class="col-md-6">
 													<div class="form-group">
-														<label class="label" for="name">Full Name</label>
-														<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+														<label class="label" for="full_name">Full Name</label>
+														<input type="text" class="form-control" name="full_name" id="name" placeholder="Name">
 													</div>
 												</div>
 												<div class="col-md-6"> 
@@ -94,7 +95,8 @@
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<input type="submit" value="Send Message" class="btn btn-primary">
+														{{-- <input type="submit" value="Send Message" class="btn btn-primary "> --}}
+														<button class="btn btn-primary" id="enquiry_btn">Send Message</button>
 														<div class="submitting"></div>
 													</div>
 												</div>

@@ -34,4 +34,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="../admin/assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
+  {{-- jquery --}}
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="/admin/assets/js/cust_custom.js"></script>
 </head>
