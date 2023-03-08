@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MarriageCounter\MarriageCounterController;
 use App\Http\Controllers\SubscribeController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/enquiry', [AdminController::class, 'enquiry']);
     Route::get('/get_enquiry', [AdminController::class, 'getEnquiry']);
 });
+
+Route::prefix('admin')->group(function () {
+    Route::get('/test', [AdminController::class, 'getEnquiry']);
+});
+
